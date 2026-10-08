@@ -31,7 +31,7 @@ public class FourWheelDrive {
     // Low sensitivity mode: reduces wheel power for precise movements
     private boolean lowSensOn;
     private double lowSensMult;         // Dynamic multiplier (0–1), adjustable during a match
-    private double lowSensPermaMult;    // Fixed reduced-power multiplier when low sensitivity is toggled on
+    private final double lowSensPermaMult = 0.4;    // Fixed reduced-power multiplier when low sensitivity is toggled on
 
     // Controls forward/backward orientation: 1 = normal, -1 = flipped (robot drives "backwards")
     private int direction = 1;
@@ -64,7 +64,6 @@ public class FourWheelDrive {
 
         lowSensOn = false;
         lowSensMult = 1.0;          // Full power by default
-        lowSensPermaMult = 0.4;     // When low sens is locked on, run at 40% power
     }
 
     /**
