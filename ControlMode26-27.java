@@ -41,10 +41,10 @@ public class ControlModeRed extends LinearOpMode {
     public void runopMode() {
 
         FourWheelDrive wheels = new FourWheelDrive(
-            hardwareMap.get(DcMotorEx.class, "wheel_FrontRight"),
-            hardwareMap.get(DcMotorEx.class, "wheel_FrontLeft"),
-            hardwareMap.get(DcMotorEx.class, "wheel_BackRight"),
-            hardwareMap.get(DcMotorEx.class, "wheel_BackLeft")
+            hardwareMap.get(DcMotorEx.class, "wheel_FR"),
+            hardwareMap.get(DcMotorEx.class, "wheel_FL"),
+            hardwareMap.get(DcMotorEx.class, "wheel_BR"),
+            hardwareMap.get(DcMotorEx.class, "wheel_BL")
         );
 
         waitForStart();   // Wait for referee to press START
