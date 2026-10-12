@@ -17,36 +17,23 @@ import java.util.Map;
 import org.firstinspires.ftc.vision.VisionPortal;
 
 @TeleOp(name = "ControlMode", group = "Robot")
-public class ControlModeRed extends LinearOpMode {
+public class ControlMode extends LinearOpMode {
 
     // Match timer — used for debouncing and elapsed-time telemetry
     private ElapsedTime runtime = new ElapsedTime();
-    
-    /** Records the current time as the last-pressed time for a given button. */
-    public void setButtonTime(String button) {
-        buttonTimes.put(button, runtime.seconds());
-    }
-
-    /** Returns the last time a given button was pressed (defaults to 0 if never pressed). */
-    public double getButtonTime(String button) {
-        buttonTimes.putIfAbsent(button, 0.0);
-        return buttonTimes.get(button);
-    }
-
-    public boolean debounce(String button, double time) {
-        return runtime.seconds() - getButtonTime(button) > time;
-    }
 
     @Override
-    public void runopMode() {
+    public void runOpMode() {
 
         FourWheelDrive wheels = new FourWheelDrive(
-            hardwareMap.get(DcMotorEx.class, "wheel_FR"),
-            hardwareMap.get(DcMotorEx.class, "wheel_FL"),
-            hardwareMap.get(DcMotorEx.class, "wheel_BR"),
-            hardwareMap.get(DcMotorEx.class, "wheel_BL")
+            hardwareMap.get(DcMotorEx.class, "wheel_FR"), // 1
+            hardwareMap.get(DcMotorEx.class, "wheel_FL"), // 2
+            hardwareMap.get(DcMotorEx.class, "wheel_BR"), // 0
+            hardwareMap.get(DcMotorEx.class, "wheel_BL") // 3
         );
-
+        telemetry.addLine("Robot initialized");
+        telemetry.addLine("Waiting for start");
+        telemetry.update();
         waitForStart();   // Wait for referee to press START
         runtime.reset();
 
