@@ -40,8 +40,8 @@ public class ControlMode extends LinearOpMode {
         while(opModeIsActive()){
 
             wheels.stickDrive(
-                    gamepad1.left_stick_y,
-                    gamepad1.left_stick_x,
+                    -gamepad1.left_stick_x,
+                    gamepad1.left_stick_y, 
                     gamepad1.right_stick_x
             );
 
