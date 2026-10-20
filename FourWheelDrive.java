@@ -58,7 +58,7 @@ public class FourWheelDrive {
         // Set motor directions to match the physical orientation of the mecanum wheels.
         // BackLeft is reversed because it is physically mirrored on the drivetrain.
         wheel_FrontLeft.setDirection(DcMotor.Direction.FORWARD);
-        wheel_BackLeft.setDirection(DcMotor.Direction.REVERSE);
+        wheel_BackLeft.setDirection(DcMotor.Direction.FORWARD);
         wheel_FrontRight.setDirection(DcMotor.Direction.FORWARD);
         wheel_BackRight.setDirection(DcMotor.Direction.FORWARD);
 
